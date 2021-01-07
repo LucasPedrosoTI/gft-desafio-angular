@@ -17,6 +17,7 @@
             <th>Nome</th>
             <th>Username</th>
             <th>E-mail</th>
+            <th>Ações</th>
           </tr>
         </thead>
         <tbody>
@@ -24,6 +25,11 @@
             <td>{{ usuario.name }}</td>
             <td>{{ usuario.username }}</td>
             <td>{{ usuario.email }}</td>
+            <td>
+              <button class="btn btn-default" (click)="open(usuario)">
+                <i class="fas fa-search"></i>
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>

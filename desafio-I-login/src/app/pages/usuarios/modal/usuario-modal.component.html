@@ -1,0 +1,49 @@
+<!-- Modal -->
+<!-- <ng-template #modal let-modal> -->
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">{{ usuario.name }}</h4>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="modal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <dl class="row">
+    <dt class="col-sm-3">Address</dt>
+    <dd class="col-sm-9">
+      {{ usuario.address.street }}, {{ usuario.address.suite }},
+      {{ usuario.address.city }} -
+      {{ usuario.address.zipcode }}
+    </dd>
+
+    <dt class="col-sm-3">Phone</dt>
+    <dd class="col-sm-9">
+      {{ usuario.phone }}
+    </dd>
+
+    <dt class="col-sm-3">Website</dt>
+    <dd class="col-sm-9">
+      {{ usuario.website }}
+    </dd>
+
+    <dt class="col-sm-3">Company</dt>
+    <dd class="col-sm-9">
+      {{ usuario.company.name }} -
+      {{ usuario.company.catchPhrase }}
+    </dd>
+  </dl>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="modal.close('Close click')"
+  >
+    Close
+  </button>
+</div>
+<!-- </ng-template> -->

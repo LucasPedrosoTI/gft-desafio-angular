@@ -13,6 +13,8 @@ import { FotosComponent } from './pages/fotos/fotos.component';
 import { PaginationComponent } from './navigation/pagination/pagination.component';
 import { FilterComponent } from './navigation/filter/filter.component';
 import { FotoCardComponent } from './pages/fotos/foto-card/foto-card.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UsuarioModalComponent } from './pages/usuarios/modal/usuario-modal.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { FotoCardComponent } from './pages/fotos/foto-card/foto-card.component';
     PaginationComponent,
     FilterComponent,
     FotoCardComponent,
+    UsuarioModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,7 @@ import { FotoCardComponent } from './pages/fotos/foto-card/foto-card.component';
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
+    NgbModule,
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent],
