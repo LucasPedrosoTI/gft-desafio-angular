@@ -15,6 +15,8 @@ import { FilterComponent } from './navigation/filter/filter.component';
 import { FotoCardComponent } from './pages/fotos/foto-card/foto-card.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UsuarioModalComponent } from './pages/usuarios/modal/usuario-modal.component';
+import { SpinnerComponent } from './navigation/spinner/spinner.component';
+import { httpInterceptorProviders } from './http-interceptor';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { UsuarioModalComponent } from './pages/usuarios/modal/usuario-modal.comp
     FilterComponent,
     FotoCardComponent,
     UsuarioModalComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,10 @@ import { UsuarioModalComponent } from './pages/usuarios/modal/usuario-modal.comp
     CommonModule,
     NgbModule,
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/' },
+    httpInterceptorProviders,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
