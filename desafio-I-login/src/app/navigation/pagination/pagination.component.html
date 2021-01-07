@@ -1,0 +1,37 @@
+<div class="row align-items-center justify-content-end">
+  <span class="col-auto">Items per page: </span>
+  <select
+    class="form-control-sm form-select col-auto"
+    style="width: min-content"
+    #itemsPerPage
+    (change)="onChange(itemsPerPage.value)"
+  >
+    <option
+      *ngFor="let option of page.itemsPerPageOptions"
+      value="{{ option }}"
+    >
+      {{ option }}
+    </option>
+  </select>
+
+  <span class="col-auto mx-4">
+    {{ page.startItem }} - {{ page.endItem }} de {{ page.totalItems }}
+  </span>
+
+  <span class="col-auto">
+    <button
+      class="btn btn-default"
+      [disabled]="page.startItem <= 1"
+      (click)="previousPage()"
+    >
+      <i class="fas fa-angle-left"></i>
+    </button>
+    <button
+      (click)="nextPage()"
+      class="btn btn-default"
+      [disabled]="page.endItem == page.totalItems"
+    >
+      <i class="fas fa-angle-right"></i>
+    </button>
+  </span>
+</div>

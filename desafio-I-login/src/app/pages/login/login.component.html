@@ -1,0 +1,79 @@
+<div class="container vh-100 d-flex align-items-center justify-content-center">
+  <div class="card">
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+      class="needs-validation"
+    >
+      <div class="m-3">
+        <input
+          placeholder="email"
+          type="email"
+          class="form-control"
+          id="email"
+          aria-describedby="email"
+          formControlName="email"
+          required
+          [ngClass]="{
+            'is-invalid':
+              email && email.invalid && (email.dirty || email.touched)
+          }"
+        />
+      </div>
+
+      <div class="m-3">
+        <input
+          placeholder="senha"
+          type="password"
+          class="form-control"
+          id="senha"
+          aria-describedby="senha"
+          formControlName="senha"
+          required
+          [ngClass]="{
+            'is-invalid':
+              senha && senha.invalid && (senha.dirty || senha.touched)
+          }"
+        />
+      </div>
+
+      <div
+        *ngIf="
+          (email && email.invalid && (email.dirty || email.touched)) ||
+          (senha && senha.invalid && (senha.dirty || senha.touched))
+        "
+        class="alert alert-danger mx-4 p-1"
+      >
+        <div *ngIf="email && email.errors && email.errors.required">
+          Email é obrigatório.
+        </div>
+
+        <div *ngIf="email && email.errors && email.errors.email">
+          Email deve ser válido.
+        </div>
+
+        <div *ngIf="senha && senha.errors && senha.errors.required">
+          Senha é obrigatória.
+        </div>
+      </div>
+
+      <div *ngIf="invalidLogin" class="alert alert-danger mx-4 p-1">
+        E-mail ou senha inválidos
+      </div>
+
+      <div *ngIf="needsToLogin" class="alert alert-danger mx-4 p-1">
+        É necessário logar antes
+      </div>
+
+      <div class="my-3 d-flex justify-content-center">
+        <button
+          type="submit"
+          class="btn btn-success custom-hover"
+          [disabled]="loginForm.invalid"
+        >
+          Entrar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
