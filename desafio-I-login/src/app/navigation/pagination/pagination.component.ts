@@ -11,7 +11,6 @@ export class PaginationComponent implements OnInit {
 
   @Input('data') data: Array<any> = [];
   @Input('page') page: Page = new Page();
-
   @Output() dataChanged = new EventEmitter();
 
   ngOnInit(): void {}
@@ -25,24 +24,24 @@ export class PaginationComponent implements OnInit {
 
     this.page.itemsPerPage = itemsPerPage;
     this.page.endItem = itemsPerPage;
-    this.updateStartAndEndPage();
+    this.updateDataAndSendEvent();
   }
 
   nextPage() {
     this.page.startItem += this.page.itemsPerPage;
     this.page.endItem += this.page.itemsPerPage;
 
-    this.updateStartAndEndPage();
+    this.updateDataAndSendEvent();
   }
 
   previousPage() {
     this.page.startItem -= this.page.itemsPerPage;
     this.page.endItem -= this.page.itemsPerPage;
 
-    this.updateStartAndEndPage();
+    this.updateDataAndSendEvent();
   }
 
-  private updateStartAndEndPage() {
+  private updateDataAndSendEvent() {
     let updatedData = this.data.slice(
       this.page.startItem - 1,
       this.page.endItem

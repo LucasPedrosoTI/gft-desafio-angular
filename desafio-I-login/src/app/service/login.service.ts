@@ -8,7 +8,9 @@ import { BehaviorSubject } from 'rxjs';
 export class LoginService {
   constructor(private router: Router) {}
 
-  public logado: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public logado: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    this.isLogado()
+  );
 
   redirectIfNotLoggedIn() {
     if (this.isNotLogado()) {

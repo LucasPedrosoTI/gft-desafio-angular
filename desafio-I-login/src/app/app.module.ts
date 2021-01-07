@@ -12,6 +12,7 @@ import { MenuComponent } from './navigation/menu/menu.component';
 import { FotosComponent } from './pages/fotos/fotos.component';
 import { PaginationComponent } from './navigation/pagination/pagination.component';
 import { FilterComponent } from './navigation/filter/filter.component';
+import { FotoCardComponent } from './pages/fotos/foto-card/foto-card.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FilterComponent } from './navigation/filter/filter.component';
     FotosComponent,
     PaginationComponent,
     FilterComponent,
+    FotoCardComponent,
   ],
   imports: [
     BrowserModule,

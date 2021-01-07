@@ -35,7 +35,7 @@ export class FotosComponent implements OnInit {
         this.page.loadItemsPerPageOptions();
 
         this.fotos = fotos;
-        this.fotosFiltradas = fotos.splice(
+        this.fotosFiltradas = fotos.slice(
           this.page.startItem - 1,
           this.page.endItem
         );
