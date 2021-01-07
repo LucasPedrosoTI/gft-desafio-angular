@@ -3,17 +3,11 @@
     <h1><i class="fas fa-users"></i> <strong class="mx-3">Usuários</strong></h1>
   </header>
 
-  <div class="filter mt-4 mb-2">
-    <input
-      class="form-control"
-      type="text"
-      name="filter"
-      id="filter"
-      placeholder="Filter"
-      #filter
-      (keyup)="onKeyUp(filter.value)"
-    />
-  </div>
+  <app-filter
+    [data]="usuarios"
+    [page]="page"
+    (dataChanged)="dataChangedHandler($event)"
+  ></app-filter>
 
   <div class="card">
     <div class="card-body">

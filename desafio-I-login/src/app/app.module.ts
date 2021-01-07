@@ -11,6 +11,7 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { MenuComponent } from './navigation/menu/menu.component';
 import { FotosComponent } from './pages/fotos/fotos.component';
 import { PaginationComponent } from './navigation/pagination/pagination.component';
+import { FilterComponent } from './navigation/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PaginationComponent } from './navigation/pagination/pagination.componen
     MenuComponent,
     FotosComponent,
     PaginationComponent,
+    FilterComponent,
   ],
   imports: [
     BrowserModule,
